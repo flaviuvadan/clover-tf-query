@@ -1,0 +1,3 @@
+Clover
+
+This file should not allow the script to proceed. 
