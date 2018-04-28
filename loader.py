@@ -18,7 +18,7 @@ class Loader():
     Loader class that takes in the Clover ouput and "cleans" it by 
     selecting for the important features from the file. 
     """
-    genes_dataframe = pd.DataFrame()
+    genes_dataframe = None
 
     def check_file(self):
         """
@@ -30,12 +30,12 @@ class Loader():
                     "<clover_file.txt>\n\n")
             exit()
         else:
-            in_file = open(sys.argv[FIRST_ARGUMENT_INDEX], 'r')
-            first_line = in_file.readline()
-            if "Clover: Cis-eLement OVERrepresentation" not in first_line:
-                print("\nNot a Clover file.\nRequired format: python3" \
-                        "<clover_file.txt>\n\n")
-                exit()
+            with open (sys.argv[FIRST_ARGUMENT_INDEX]) as input_file:
+                first_line = input_file.readline()
+                if "Clover: Cis-eLement OVERrepresentation" not in first_line:
+                    print("\nNot a Clover file.\nRequired format: python3" \
+                            "<clover_file.txt>\n\n")
+                    exit()
 
     def load_data(self):
         """
@@ -43,7 +43,10 @@ class Loader():
         via standard input. 
         """
         self.check_file()
-        return 0
+        
+        
+
+
 
     
 ### testing ###
