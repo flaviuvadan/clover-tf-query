@@ -38,6 +38,17 @@ class Loader():
                             "<clover_file.txt>\n\n")
                     exit()
 
+    def add_genes(self, code, tf_list):
+        """
+        Add genes to the main dataframe.
+        :param code: the ensembl code.
+        :param tf_list: the transcription factors associated with the given code.
+        """
+        gene_dict = dict()
+        gene_dict[code] = tf_list
+        self.genes_dataframe = pd.concat([self.genes_dataframe, pd.DataFrame(gene_dict)],
+                                         axis=1)
+
     def load_data(self):
         """
         Load function that takes in the name of the file to load
@@ -45,39 +56,28 @@ class Loader():
         """
         self.check_file()
 
-        list_of_gene_frames = []
-        with open (sys.argv[FIRST_ARGUMENT_INDEX]) as input_file:
-            file_line = input_file.readline()
-            
-            ensembl_code = "" 
-            count_codes = 0
-            tf_list = []
+        with open(sys.argv[FIRST_ARGUMENT_INDEX]) as input_file:
 
-            while file_line:
-                if re.search(">ENS", file_line):
-                    if count_codes == 0:
-                        ensembl_code = file_line
-                        count_codes+=1
-                        file_line = input_file.readline()
+            curr_code = ""
+            tf_list_of_curr_code = []
+            code_count = 0
+
+            for line in input_file:
+                if ">ENS" in line:
+                    if code_count == 0:
+                        curr_code = line.strip()
+                        code_count += 1
                     else:
-                        # concatenate the dataframes
-                        gene_dict = dict()
-                        gene_dict[ensembl_code] = tf_list
-                        self.genes_dataframe = pd.concat([self.genes_dataframe, \
-                                pd.DataFrame(gene_dict)], axis=1)
-                        # reset 
-                        file_line = input_file.readline()
-                        ensembl_code = file_line
-                        tf_list = []
-                        file_line = input_file.readline()
-                        
-                elif len(ensembl_code) != 0:   
-                    result = re.search("(M\d+)\s([A-Z]+\$\w+)\s([\w+\-\:\(\)]+\w+)", file_line)
-                    if result and len(ensembl_code) != 0:
-                        tf_list.append(result.group(3).strip().upper())
-                        file_line = input_file.readline()
-                else:
-                    file_line = input_file.readline()
+                        self.add_genes(curr_code, tf_list_of_curr_code)
+                        curr_code = ""
+                        tf_list_of_curr_code = []
+                    curr_code = line.strip()
+                elif curr_code != "":
+                    result = re.search("(M\d+)\s([A-Z]+\$\w+)\s([\w+\-:()]+\w+)", line)
+                    if result:
+                        tf_list_of_curr_code.append(result.group(3).strip().upper())
+            self.add_genes(curr_code, tf_list_of_curr_code)
+
 
 ### testing ###
 load = Loader()

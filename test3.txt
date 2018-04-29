@@ -50,10 +50,13 @@ M03550 P$GT1_Q6_02 GT-1                        12.3       0
 
 Motif                                          Location     Strand  Sequence                        Score
 
->ENSG00000127588|ENST00000248150
+>ENSG000007654321
 	   	      M09739 V$ZGPAT_01 ZGPAT    11 -   22    -                       cccaccagcctc  7.62
                           M09636 V$MAZ_02 MAZ    19 -   40    -             cctcaggccctgggcccctccc  8.57
                       M09729 V$LUMAN_02 LUMAN    20 -   29    +                         ctcaggccct  7.03
                         M01169 V$IK_Q5 Ikaros    34 -   43    -                         ccctccctag  6.31
                       M05700 V$ZNF19_01 ZNF19    49 -   60    +                       cggtgcagctgc  6.01
                     M07141 V$ZNF263_02 FPM315    67 -   87    +              aaaggatggggagactgttgg  1
+>ENSG000001234567
+		      M09739 V$ZGPAT_01 ZGPAT    11 -   22    -                       cccaccagcctc  7.62
+		M09636 V$MAZ_02 MAZ    19 -   40    - 	    cctcaggccctgggcccctccc  8.57
