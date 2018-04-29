@@ -1,0 +1,59 @@
+Clover: Cis-eLement OVERrepresentation
+Compiled on Jul 18 2006
+
+Sequence file: 0_5mMMetDown.txt (256 sequences, 169672 bp, 52.3% C+G)
+Motif file: transfac_inputnew.txt (7454 motifs)
+
+*** Over- and Under-represented Motifs:
+
+Motif                                          Raw score  P-value from randomizing
+                                                          .         
+M07141 V$ZNF263_02 FPM315                      244        0         
+M09104 P$BPC5_01 BPC5                          206        0                
+M01458 V$UNCX41_01 Uncx-4.1                    15.1       0         
+M04071 V$POU2F1_03 POU2F1                      15         0         
+M01335 V$VSX1_01 Vsx1                          14.9       0         
+M01315 V$NKX52_01 Nkx5-2                       14.9       0         
+M01426 V$HOXB9_01 HOXB9                        14.9       0         
+M01341 V$MSX3_01 Msx-3                         14.8       0         
+M01454 V$HOXC5_01 HOXC5                        14.8       0         
+M01474 V$ESX1_01 Esx1                          14.7       0         
+M01453 V$CART1_03 CART1                        14.5       0         
+M09265 P$AGL16_01 AGL16                        14.5       0         
+M01323 V$OTP_01 OTP                            14.5       0         
+M09228 P$PHV_02 PHV                            14.4       0         
+M01318 V$IRX3_01 Irx-3                         14.3       0         
+M00269 V$XFD3_01 XFD-3                         14.3       0         
+M01391 V$PAX6_02 pax-6                         14         0         
+M00500 V$STAT6_02 STAT6                        13.8       0         
+M00206 V$HNF1_C HNF-1                          13.8       0         
+M01339 V$PAX7_01 Pax-7                         13.6       0         
+M04075 V$POU2F3_04 POU2F3                      13.5       0         
+M09491 P$ATHB25_01 ATHB25                      13.4       0         
+M09289 P$MYB27_01 MYB27                        13.3       0         
+M01469 V$NKX61_02 NKX6A                        13.2       0         
+M09410 P$AT1G23810_01 AT1G23810                13.2       0         
+M01328 V$ISL2_01 Isl2                          13.1       0         
+M01336 V$HOXA7_02 HOXA7                        13.1       0         
+M03561 V$POU2F1_Q6 POU2F1                      13         0         
+M00149 P$SBF1_01 SBF-1                         13         0         
+M04068 V$POU1F1_03 POU1F1                      12.9       0         
+M04758 V$MEF2C_02 MEF-2C                       12.7       0         
+M01485 V$IRX3_02 Irx-3                         12.6       0         
+M01399 V$HB24_01 Hlx                           12.5       0         
+M09381 P$ANAC096_01 ANAC096                    12.4       0         
+M09349 P$RVE1_03 RVE1                          12.4       0         
+M01367 V$LHX9_01 Lhx9                          12.4       0         
+M03550 P$GT1_Q6_02 GT-1                        12.3       0              
+
+*** Motif Instances with Score >= 6:
+
+Motif                                          Location     Strand  Sequence                        Score
+
+>ENSG00000127588|ENST00000248150
+	   	      M09739 V$ZGPAT_01 ZGPAT    11 -   22    -                       cccaccagcctc  7.62
+                          M09636 V$MAZ_02 MAZ    19 -   40    -             cctcaggccctgggcccctccc  8.57
+                      M09729 V$LUMAN_02 LUMAN    20 -   29    +                         ctcaggccct  7.03
+                        M01169 V$IK_Q5 Ikaros    34 -   43    -                         ccctccctag  6.31
+                      M05700 V$ZNF19_01 ZNF19    49 -   60    +                       cggtgcagctgc  6.01
+                    M07141 V$ZNF263_02 FPM315    67 -   87    +              aaaggatggggagactgttgg  1
