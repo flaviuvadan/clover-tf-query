@@ -6,15 +6,14 @@ not required for querying for genes.)
 
 # packages used in this script
 import pandas as pd
-import numpy as np
 import sys 
-import re 
-import time 
+import re
 
 # global variables 
 FIRST_ARGUMENT_INDEX = 1
 
-class Loader():
+
+class Loader:
     """
     Loader class that takes in the Clover ouput and "cleans" it by 
     selecting for the important features from the file. 
@@ -65,21 +64,15 @@ class Loader():
             for line in input_file:
                 if ">ENS" in line:
                     if code_count == 0:
-                        curr_code = line.strip()
+                        curr_code = line[1:].strip()
                         code_count += 1
                     else:
                         self.add_genes(curr_code, tf_list_of_curr_code)
                         curr_code = ""
                         tf_list_of_curr_code = []
-                    curr_code = line.strip()
+                    curr_code = line[1:].strip()
                 elif curr_code != "":
                     result = re.search("(M\d+)\s([A-Z]+\$\w+)\s([\w+\-:()]+\w+)", line)
                     if result:
                         tf_list_of_curr_code.append(result.group(3).strip().upper())
             self.add_genes(curr_code, tf_list_of_curr_code)
-
-
-### testing ###
-load = Loader()
-load.load_data()
-print(load.genes_dataframe)
