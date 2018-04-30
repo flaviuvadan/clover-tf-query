@@ -6,7 +6,8 @@ transcription factor for a given file.
 from loader import Loader
 import pandas as pd
 
-class Query():
+
+class Query:
     """
     Query class that handles user input and the query.
     """
@@ -21,7 +22,7 @@ class Query():
         a CSV file
         :return: a CSV file.
         """
-        query = input("\n\n\tEnter TF (capitalized): ")
+        query = input("\n\n\tEnter TF: ").upper()
 
         for col in self.loader.genes_dataframe.columns:
             s = set(pd.Series(self.loader.genes_dataframe[col]))

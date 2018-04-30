@@ -1,7 +1,7 @@
 """
 A data loading script that takes in the output of Clover (in text format)
 and builds an object that holds the clean data (i.e. without information
-not required for querying for genes.)
+not required for querying for transcription factors.)
 """
 
 # packages used in this script
